@@ -12,13 +12,4 @@ const db = new Sequelize(
   }
 );
 
-// tes koneksi 
-// db.authenticate()
-//   .then(() => {
-//     console.log('Koneksi database berhasil.');
-//   })
-//   .catch(err => {
-//     console.error('Tidak dapat terhubung ke database:', err);
-//   });
-
 module.exports = db;

@@ -1,7 +1,9 @@
 const express = require('express');
 const path = require('path');
+const { loadDatabase } = require('./app/middleware/LoadDatabase');
 
 const app = express();
+
 
 // router
 var indexRouter = require('./routes/index');
@@ -16,6 +18,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 // set view 
 app.set("views", path.join(__dirname, "./app/views"));
 app.set("view engine", "ejs");
+
+// database
+app.use(loadDatabase);
 
 // Rute untuk halaman utama
 app.use("/", indexRouter);
